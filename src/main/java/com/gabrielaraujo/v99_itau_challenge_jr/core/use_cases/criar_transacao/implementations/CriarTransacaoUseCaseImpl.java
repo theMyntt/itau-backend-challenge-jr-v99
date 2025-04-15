@@ -3,17 +3,16 @@ package com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.i
 import com.gabrielaraujo.v99_itau_challenge_jr.core.entities.TransacaoEntity;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.entities.factories.TransacaoFactory;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.CriarTransacaoUseCase;
-import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.implementations.ports.SalvarTransacaoPort;
+import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.implementations.ports.SalvarTransacaoConsumerPort;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.io.inputs.CriarTransacaoUseCaseInput;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.io.outputs.CriarTransacaoUseCaseOutput;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 
 public class CriarTransacaoUseCaseImpl extends CriarTransacaoUseCase {
-    private final SalvarTransacaoPort salvarTransacaoPort;
+    private final SalvarTransacaoConsumerPort salvarTransacaoConsumerPort;
 
-    public CriarTransacaoUseCaseImpl(SalvarTransacaoPort salvarTransacaoPort) {
-        this.salvarTransacaoPort = salvarTransacaoPort;
+    public CriarTransacaoUseCaseImpl(SalvarTransacaoConsumerPort salvarTransacaoConsumerPort) {
+        this.salvarTransacaoConsumerPort = salvarTransacaoConsumerPort;
     }
 
     @Override
@@ -40,10 +39,10 @@ public class CriarTransacaoUseCaseImpl extends CriarTransacaoUseCase {
     }
 
     private void salvarTransacao(TransacaoEntity transacao) {
-        var portInput = SalvarTransacaoPort.SalvarTransacaoPortInput.builder()
+        var portInput = SalvarTransacaoConsumerPort.SalvarTransacaoPortInput.builder()
                 .transacao(transacao)
                 .build();
 
-        salvarTransacaoPort.executar(portInput);
+        salvarTransacaoConsumerPort.executar(portInput);
     }
 }
