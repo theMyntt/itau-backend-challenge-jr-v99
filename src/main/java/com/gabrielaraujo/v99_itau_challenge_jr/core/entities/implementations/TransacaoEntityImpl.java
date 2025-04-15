@@ -26,7 +26,7 @@ public class TransacaoEntityImpl extends TransacaoEntity {
 
     @Override
     public void comHora(OffsetDateTime dataHora) {
-        if (dataHora.isAfter(this.dataHora)) {
+        if (dataHora.isAfter(OffsetDateTime.now())) {
             throw new OneOrMoreCriteriaWereNotMetException("dataHora", dataHora.toString());
         }
 
