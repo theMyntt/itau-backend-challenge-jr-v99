@@ -24,12 +24,11 @@ public class CriarTransacaoUseCaseImpl extends CriarTransacaoUseCase {
     @Override
     protected CriarTransacaoUseCaseOutput aplicarLogicaInterna(CriarTransacaoUseCaseInput input) {
         var transacao = extrairTransacaoDo(input);
-        var transacaoSalva = salvarTransacao(transacao);
+
+        salvarTransacao(transacao);
 
         return CriarTransacaoUseCaseOutput.builder()
-                .mensagem("Transação criada.")
-                .idDaTransacao(transacaoSalva.getId().toString())
-                .codigo(HttpStatus.CREATED)
+                .codigoHttp(HttpStatus.CREATED.value())
                 .build();
     }
 
@@ -40,11 +39,11 @@ public class CriarTransacaoUseCaseImpl extends CriarTransacaoUseCase {
         );
     }
 
-    private TransacaoEntity salvarTransacao(TransacaoEntity transacao) {
+    private void salvarTransacao(TransacaoEntity transacao) {
         var portInput = SalvarTransacaoPort.SalvarTransacaoPortInput.builder()
                 .transacao(transacao)
                 .build();
-        var portOutput = salvarTransacaoPort.executar(portInput);
-        return portOutput.getTransacao();
+
+        salvarTransacaoPort.executar(portInput);
     }
 }

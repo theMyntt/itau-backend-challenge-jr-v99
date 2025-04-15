@@ -8,7 +8,5 @@ import org.springframework.http.HttpStatusCode;
 @Getter
 @Builder
 public class CriarTransacaoUseCaseOutput {
-    private String mensagem;
-    private String idDaTransacao;
-    private HttpStatus codigo;
+    private int codigoHttp;
 }
