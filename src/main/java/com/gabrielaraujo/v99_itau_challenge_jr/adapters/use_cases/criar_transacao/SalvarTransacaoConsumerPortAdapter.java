@@ -4,7 +4,9 @@ import com.gabrielaraujo.v99_itau_challenge_jr.adapters.dao.repositories.Transac
 import com.gabrielaraujo.v99_itau_challenge_jr.adapters.dao.tables.TransacaoTableRow;
 import com.gabrielaraujo.v99_itau_challenge_jr.adapters.dao.tables.mappers.TransacaoMapper;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.implementations.ports.SalvarTransacaoConsumerPort;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SalvarTransacaoConsumerPortAdapter implements SalvarTransacaoConsumerPort {
     private final TransacaoRepository transacaoRepository;
 

@@ -7,7 +7,9 @@ import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.im
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.io.inputs.CriarTransacaoUseCaseInput;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.criar_transacao.io.outputs.CriarTransacaoUseCaseOutput;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CriarTransacaoUseCaseImpl extends CriarTransacaoUseCase {
     private final SalvarTransacaoConsumerPort salvarTransacaoConsumerPort;
 

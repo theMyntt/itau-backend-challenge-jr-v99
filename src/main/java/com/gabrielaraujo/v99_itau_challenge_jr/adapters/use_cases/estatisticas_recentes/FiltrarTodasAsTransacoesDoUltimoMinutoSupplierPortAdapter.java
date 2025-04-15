@@ -3,10 +3,12 @@ package com.gabrielaraujo.v99_itau_challenge_jr.adapters.use_cases.estatisticas_
 import com.gabrielaraujo.v99_itau_challenge_jr.adapters.dao.repositories.TransacaoRepository;
 import com.gabrielaraujo.v99_itau_challenge_jr.adapters.dao.tables.mappers.TransacaoMapper;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.estatisticas_recentes.implementations.ports.FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPort;
+import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
 import java.util.stream.Collectors;
 
+@Service
 public class FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPortAdapter implements FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPort {
     private final TransacaoRepository transacaoRepository;
 

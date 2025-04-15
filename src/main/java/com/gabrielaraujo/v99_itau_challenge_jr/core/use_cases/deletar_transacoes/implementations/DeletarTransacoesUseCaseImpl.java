@@ -2,7 +2,9 @@ package com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.deletar_transacoe
 
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.deletar_transacoes.DeletarTransacoesUseCase;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.deletar_transacoes.implementations.ports.ApagarTodasTransacoesRunnablePort;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DeletarTransacoesUseCaseImpl extends DeletarTransacoesUseCase {
     private final ApagarTodasTransacoesRunnablePort apagarTodasTransacoesRunnablePort;
 

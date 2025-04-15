@@ -2,11 +2,13 @@ package com.gabrielaraujo.v99_itau_challenge_jr.adapters.dao.repositories.implem
 
 import com.gabrielaraujo.v99_itau_challenge_jr.adapters.dao.repositories.TransacaoRepository;
 import com.gabrielaraujo.v99_itau_challenge_jr.adapters.dao.tables.TransacaoTableRow;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class TransacaoRepositoryImpl extends TransacaoRepository {
     @Override
     public TransacaoTableRow salvarNova(TransacaoTableRow transacao) {

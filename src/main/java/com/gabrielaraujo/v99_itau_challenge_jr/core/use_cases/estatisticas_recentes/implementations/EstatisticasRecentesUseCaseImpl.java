@@ -4,10 +4,12 @@ import com.gabrielaraujo.v99_itau_challenge_jr.core.entities.TransacaoEntity;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.estatisticas_recentes.EstatisticasRecentesUseCase;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.estatisticas_recentes.implementations.ports.FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPort;
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.estatisticas_recentes.io.EstatisticasRecentesUseCaseOutput;
+import org.springframework.stereotype.Service;
 
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
+@Service
 public class EstatisticasRecentesUseCaseImpl extends EstatisticasRecentesUseCase {
     private final FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPort filtrarTodasAsTransacoesDoUltimoMinutoSupplierPort;
 
