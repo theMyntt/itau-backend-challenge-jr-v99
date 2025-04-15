@@ -1,6 +1,7 @@
 package com.gabrielaraujo.v99_itau_challenge_jr.controllers.estatisticas_recentes;
 
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.estatisticas_recentes.EstatisticasRecentesUseCase;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ public class EstatisticasRecentesController {
     }
 
     @GetMapping("/estatistica")
+    @Operation(summary = "Gera estatísticas das transações do último minuto")
     public ResponseEntity<DoubleSummaryStatistics> performar() {
         var resultado = estatisticasRecentesUseCase.executar();
         return ResponseEntity.status(200).body(resultado.getEstatisticas());

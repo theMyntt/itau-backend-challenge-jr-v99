@@ -1,6 +1,7 @@
 package com.gabrielaraujo.v99_itau_challenge_jr.controllers.deletar_transacoes;
 
 import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.deletar_transacoes.DeletarTransacoesUseCase;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ public class DeletarTransacoesController {
     }
 
     @DeleteMapping("/transacao")
+    @Operation(summary = "Deleta todas as Transações")
     public ResponseEntity<?> performar() {
         deletarTransacoesUseCase.executar();
         return ResponseEntity.status(200).build();
