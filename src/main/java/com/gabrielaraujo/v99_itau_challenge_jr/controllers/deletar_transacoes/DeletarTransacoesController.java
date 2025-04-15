@@ -4,8 +4,9 @@ import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.deletar_transacoes
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class DeletarTransacoesController {
     private final DeletarTransacoesUseCase deletarTransacoesUseCase;
 

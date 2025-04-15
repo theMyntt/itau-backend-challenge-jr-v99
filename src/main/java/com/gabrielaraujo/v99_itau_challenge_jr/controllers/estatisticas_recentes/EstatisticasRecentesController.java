@@ -4,10 +4,11 @@ import com.gabrielaraujo.v99_itau_challenge_jr.core.use_cases.estatisticas_recen
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.DoubleSummaryStatistics;
 
-@Controller
+@RestController
 public class EstatisticasRecentesController {
     private final EstatisticasRecentesUseCase estatisticasRecentesUseCase;
 
