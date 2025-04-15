@@ -9,13 +9,13 @@ import java.util.stream.Collectors;
 
 public class TransacaoRepositoryImpl extends TransacaoRepository {
     @Override
-    protected TransacaoTableRow salvarNova(TransacaoTableRow transacao) {
+    public TransacaoTableRow salvarNova(TransacaoTableRow transacao) {
         this.transacoes.add(transacao);
         return transacao;
     }
 
     @Override
-    protected List<String> deletarTodas() {
+    public List<String> deletarTodas() {
         var idQueVaoSerApagados = this.transacoes.stream()
                 .map(TransacaoTableRow::getId)
                 .collect(Collectors.toList());
@@ -26,7 +26,7 @@ public class TransacaoRepositoryImpl extends TransacaoRepository {
     }
 
     @Override
-    protected List<TransacaoTableRow> listarTodas() {
+    public List<TransacaoTableRow> listarTodas() {
         return this.transacoes;
     }
 }

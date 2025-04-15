@@ -8,7 +8,7 @@ import java.util.List;
 public abstract class TransacaoRepository {
     protected List<TransacaoTableRow> transacoes = new ArrayList<>();
 
-    protected abstract TransacaoTableRow salvarNova(TransacaoTableRow transacao);
-    protected abstract List<String> deletarTodas();
-    protected abstract List<TransacaoTableRow> listarTodas();
+    public abstract TransacaoTableRow salvarNova(TransacaoTableRow transacao);
+    public abstract List<String> deletarTodas();
+    public abstract List<TransacaoTableRow> listarTodas();
 }
