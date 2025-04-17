@@ -7,16 +7,20 @@ import java.time.OffsetDateTime;
 import java.util.UUID;
 
 public class TransacaoEntityImpl extends TransacaoEntity {
-    public TransacaoEntityImpl() {
+    public TransacaoEntityImpl(double valor, OffsetDateTime dataHora) {
         this.id = UUID.randomUUID();
+        validarValor(valor);
+        validarDataHora(dataHora);
     }
 
-    public TransacaoEntityImpl(UUID id) {
+    public TransacaoEntityImpl(UUID id, double valor, OffsetDateTime dataHora) {
         this.id = id;
+        validarValor(valor);
+        validarDataHora(dataHora);
     }
 
     @Override
-    public void comValor(double valor) {
+    protected void validarValor(double valor) {
         if (valor < 0) {
             throw new CriteriosNaoCorrespondidosException("valor", valor);
         }
@@ -25,7 +29,7 @@ public class TransacaoEntityImpl extends TransacaoEntity {
     }
 
     @Override
-    public void comHora(OffsetDateTime dataHora) {
+    protected void validarDataHora(OffsetDateTime dataHora) {
         if (dataHora.isAfter(OffsetDateTime.now())) {
             throw new CriteriosNaoCorrespondidosException("dataHora", dataHora.toString());
         }

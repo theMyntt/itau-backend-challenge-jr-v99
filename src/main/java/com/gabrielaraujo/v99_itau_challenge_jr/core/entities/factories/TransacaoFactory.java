@@ -11,19 +11,13 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class TransacaoFactory {
     public static TransacaoEntity of(double valor, OffsetDateTime dataHota) {
-        var entity = new TransacaoEntityImpl();
-
-        entity.comValor(valor);
-        entity.comHora(dataHota);
+        var entity = new TransacaoEntityImpl(valor, dataHota);
 
         return entity;
     }
 
     public static TransacaoEntity of(UUID id, double valor, OffsetDateTime dataHota) {
-        var entity = new TransacaoEntityImpl(id);
-
-        entity.comValor(valor);
-        entity.comHora(dataHota);
+        var entity = new TransacaoEntityImpl(id, valor, dataHota);
 
         return entity;
     }

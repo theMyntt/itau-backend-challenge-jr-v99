@@ -14,6 +14,6 @@ public abstract class TransacaoEntity {
     protected double valor;
     protected OffsetDateTime dataHora;
 
-    public abstract void comValor(double valor);
-    public abstract void comHora(OffsetDateTime dataHora);
+    protected abstract void validarValor(double valor);
+    protected abstract void validarDataHora(OffsetDateTime dataHora);
 }
