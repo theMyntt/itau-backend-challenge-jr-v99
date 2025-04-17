@@ -14,7 +14,7 @@
 
 ## Architecture
 
-In this Challenge, I used Hexagonal Architecture with Domain Driven Design Patter and Clean Architecture fundamentals 
+In this Challenge, I used Hexagonal Architecture with Domain Driven Design Pattern and Clean Architecture fundamentals 
 
 Example:
 - `Controller -> UseCase`: Controller sends a `UseCaseInput` to `UseCase`
