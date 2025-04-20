@@ -1,0 +1,9 @@
+target/
+.git/
+.idea/
+README.md
+.gitignore
+CHALLENGE.md
+mvnw
+mvnw.cmd
+.gitattributes
