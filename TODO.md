@@ -1,0 +1,9 @@
+- [X] Container Support
+- [X] Swagger Support
+- [X] Custom Time Statistics Route
+- [X] Error Handling
+- [ ] Unit Tests (Working On) #1
+- [X] Application Logs
+- [X] Documentation
+- [ ] Performance Estimate #5
+- [ ] HealthCheck Route #4 
