@@ -1,4 +1,4 @@
-# Itaú Backend Challenge for Júnior Engineers (Job Apply 99)
+# Itaú Backend Challenge for Júnior Engineers (Job Vacancy 99)
 By Gabriel Araújo
 
 - Built in Java 21
