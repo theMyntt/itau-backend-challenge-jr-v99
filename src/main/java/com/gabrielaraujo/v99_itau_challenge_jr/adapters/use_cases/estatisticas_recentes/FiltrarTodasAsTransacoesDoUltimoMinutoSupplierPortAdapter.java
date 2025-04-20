@@ -17,8 +17,8 @@ public class FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPortAdapter implement
     }
 
     @Override
-    public FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPortOuput executar() {
-        OffsetDateTime limite = OffsetDateTime.now().minusSeconds(60);
+    public FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPortOuput executar(long segundos) {
+        OffsetDateTime limite = OffsetDateTime.now().minusSeconds(segundos);
 
         var transacoes = transacaoRepository.listarTodas().stream()
                 .map(TransacaoMapper::toEntityFormat)

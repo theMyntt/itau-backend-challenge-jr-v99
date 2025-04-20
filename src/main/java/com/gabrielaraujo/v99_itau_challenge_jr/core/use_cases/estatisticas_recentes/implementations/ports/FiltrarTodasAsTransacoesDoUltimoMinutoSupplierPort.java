@@ -7,7 +7,7 @@ import lombok.Getter;
 import java.util.List;
 
 public interface FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPort {
-    FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPortOuput executar();
+    FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPortOuput executar(long segundos);
     @Getter
     @Builder
     class FiltrarTodasAsTransacoesDoUltimoMinutoSupplierPortOuput {

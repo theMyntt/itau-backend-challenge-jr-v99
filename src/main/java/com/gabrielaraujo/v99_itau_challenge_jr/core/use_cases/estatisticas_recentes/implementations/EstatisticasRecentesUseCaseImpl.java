@@ -18,13 +18,13 @@ public class EstatisticasRecentesUseCaseImpl extends EstatisticasRecentesUseCase
     }
 
     @Override
-    public EstatisticasRecentesUseCaseOutput executar() {
-        return aplicarLogicaInterna();
+    public EstatisticasRecentesUseCaseOutput executar(long segundos) {
+        return aplicarLogicaInterna(segundos);
     }
 
     @Override
-    protected EstatisticasRecentesUseCaseOutput aplicarLogicaInterna() {
-        var transacoes = filtrarTransacoesRecentes();
+    protected EstatisticasRecentesUseCaseOutput aplicarLogicaInterna(long segundos) {
+        var transacoes = filtrarTransacoesRecentes(segundos);
         var estatisticas = calcularEstaticasDas(transacoes);
 
         return EstatisticasRecentesUseCaseOutput.builder()
@@ -32,8 +32,8 @@ public class EstatisticasRecentesUseCaseImpl extends EstatisticasRecentesUseCase
                 .build();
     }
 
-    private List<TransacaoEntity> filtrarTransacoesRecentes() {
-        var portOutput = filtrarTodasAsTransacoesDoUltimoMinutoSupplierPort.executar();
+    private List<TransacaoEntity> filtrarTransacoesRecentes(long segundos) {
+        var portOutput = filtrarTodasAsTransacoesDoUltimoMinutoSupplierPort.executar(segundos);
         return portOutput.getTransacoes();
     }
 
